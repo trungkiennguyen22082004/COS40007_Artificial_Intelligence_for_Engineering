@@ -1,0 +1,2 @@
+pip install numpy pandas matplotlib scikit-
+learn tensorflow keras torch opencv-python ultralytics labelme

@@ -1,0 +1,6 @@
+# data.yaml
+train: F:/COS40007_Artificial_Intelligence_for_Engineering/Studios/Studio 5/log-labelled/train  # Path to your training images
+val: F:/COS40007_Artificial_Intelligence_for_Engineering/Studios/Studio 5/log-labelled/test     # Path to your test/validation images
+
+nc: 1  # Number of classes (1 class: "log")
+names: ['log']  # Class name
