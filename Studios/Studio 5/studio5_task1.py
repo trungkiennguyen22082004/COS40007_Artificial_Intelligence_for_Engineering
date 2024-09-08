@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 def prepare_data():
     # Define the dataset path
-    data_dir = './Corrosion'  # Update this to the path where your images are stored
+    data_dir = './Corrosion'
     classes = ['rust', 'no rust']
 
     # Create train and test directories
@@ -122,6 +122,9 @@ def simple_cnn(train_dir, test_dir):
     # Evaluate the model
     accuracy = model.evaluate(validation_generator)
     print(f'Test accuracy: {accuracy[1] * 100:.2f}%')
+    
+    # Save the model
+    model.save('./simple_cnn.h5')  # saves as an HDF5 file
 
 
 #   3. RESNET50
@@ -130,7 +133,7 @@ from tensorflow.keras.applications.resnet50 import ResNet50
 from tensorflow.keras.layers import GlobalAveragePooling2D, Dense
 from tensorflow.keras.models import Model
 
-def resnet50(train_dir, test_dir)
+def resnet50(train_dir, test_dir):
     # Define model input dimensions
     img_width, img_height = 224, 224
 
@@ -170,6 +173,9 @@ def resnet50(train_dir, test_dir)
     # Evaluate the model
     accuracy_resnet = model_resnet.evaluate(validation_generator)
     print(f'ResNet50 Test accuracy: {accuracy_resnet[1] * 100:.2f}%')
+    
+    # Save the model
+    model_resnet.save('resnet50.h5')
 
 def main():
     print("\n==========================================================================")
@@ -256,7 +262,7 @@ if __name__ == '__main__':
 #     Args:
 #     - data_dir (str): Directory containing PNG images and JSON files.
 #     - label_dir (str): Directory where YOLO txt files will be saved.
-#     - class_name (str): Class name for your objects (e.g., "log").
+#     - class_name (str): Class name for the objects (e.g., "log").
 #     """
 #     if not os.path.exists(label_dir):
 #         os.makedirs(label_dir)
@@ -313,7 +319,7 @@ if __name__ == '__main__':
 
 #         print(f"Converted {json_file} to YOLO format and moved image to {images_dir}.")
 
-# # Directories for your data
+# # Directories for the data
 # train_json_dir = './log-labelled/train'
 # test_json_dir = './log-labelled/test'
 # train_label_dir = './log-labelled/train/labels'
@@ -332,7 +338,7 @@ if __name__ == '__main__':
 # #   Initialize YOLOv5 model
 # model = YOLO('yolov8n.yaml')  # Specify the architecture YAML file (YOLOv8n)
 
-# #   Train the model on your custom dataset from scratch
+# #   Train the model on the custom dataset from scratch
 # model.train(data='./data.yaml', epochs=50, imgsz=1024, batch=16)
 
 # # Evaluate the trained model

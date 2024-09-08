@@ -224,7 +224,7 @@ def train_model():
     weights = MaskRCNN_ResNet50_FPN_Weights.COCO_V1  # Use the new 'weights' argument
     model = maskrcnn_resnet50_fpn(weights=weights)
 
-    # Modify the model to fit your dataset (1 class: "log" + background)
+    # Modify the model to fit the dataset (1 class: "log" + background)
     model.roi_heads.box_predictor = torchvision.models.detection.faster_rcnn.FastRCNNPredictor(1024, 2)
     in_channels = model.roi_heads.mask_predictor.conv5_mask.in_channels  # This is 256 for ResNet50
     model.roi_heads.mask_predictor = torchvision.models.detection.mask_rcnn.MaskRCNNPredictor(in_channels, 256, 2)
@@ -267,12 +267,12 @@ def test_model():
     weights = MaskRCNN_ResNet50_FPN_Weights.COCO_V1
     model = maskrcnn_resnet50_fpn(weights=weights)
 
-    # Modify the model to fit your dataset (1 class: "log" + background)
+    # Modify the model to fit the dataset (1 class: "log" + background)
     model.roi_heads.box_predictor = torchvision.models.detection.faster_rcnn.FastRCNNPredictor(1024, 2)
     in_channels = model.roi_heads.mask_predictor.conv5_mask.in_channels  # This is 256 for ResNet50
     model.roi_heads.mask_predictor = torchvision.models.detection.mask_rcnn.MaskRCNNPredictor(in_channels, 256, 2)
     
-    # To test without retraining, you can load the saved model like this:
+    # Load the saved model
     load_model_path = './log-labelled/mask_rcnn_model.pth'
     model.load_state_dict(torch.load(load_model_path))
     model.to(device)
