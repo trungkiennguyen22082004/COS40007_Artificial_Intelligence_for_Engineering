@@ -160,3 +160,10 @@ cython_debug/
 #.idea/
 
 Studios/studios_env/
+Studios/studios_env_2
+runs
+Studios/yolov5/
+Studios/Studio 5/log-labelled.zip
+Studios/Studio 5/log-labelled/mask_rcnn_model.pth
+Studios/Studio 5/resnet50.h5
+Studios/Studio 5/simple_cnn.h5

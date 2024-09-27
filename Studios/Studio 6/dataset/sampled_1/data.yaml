@@ -1,0 +1,4 @@
+train: F:/COS40007_Artificial_Intelligence_for_Engineering/Studios/Studio 6/dataset/sampled_1/images/train
+val: F:/COS40007_Artificial_Intelligence_for_Engineering/Studios/Studio 6/dataset/sampled_1/images/test
+nc: 1
+names: ['Graffiti']
