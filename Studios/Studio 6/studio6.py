@@ -532,11 +532,11 @@ def main():
     #                            labels_folder='./dataset/yolo_labels')
     
     model = YOLO('./model_trained_1.pt')
-    # detect_graffiti_in_video(model, video_path='./dataset/videos/sample_1.mp4', output_path='./dataset/videos/output_detected_for_sample_1.mp4', frame_width=1080, frame_height=1920)
-    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_2.mp4', output_path='./dataset/videos/output_detected_for_sample_2.mp4', frame_width=1920, frame_height=1080)
-    # detect_graffiti_in_video(model, video_path='./dataset/videos/sample_3.mp4', output_path='./dataset/videos/output_detected_for_sample_3.mp4', frame_width=1920, frame_height=1080)
-    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_4.mp4', output_path='./dataset/videos/output_detected_for_sample_4.mp4', frame_width=1920, frame_height=1080)
-    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_5.mp4', output_path='./dataset/videos/output_detected_for_sample_5.mp4', frame_width=1920, frame_height=1080)
+    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_1.mp4', output_path='./dataset/videos/output_detected_for_sample_1.mp4', frame_width=1080, frame_height=1920)
+    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_2.mp4', output_path='./dataset/videos/output_detected_for_sample_2.mp4', frame_width=1280, frame_height=720)
+    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_3.mp4', output_path='./dataset/videos/output_detected_for_sample_3.mp4', frame_width=1920, frame_height=1080)
+    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_4.mp4', output_path='./dataset/videos/output_detected_for_sample_4.mp4', frame_width=3840, frame_height=2160)
+    detect_graffiti_in_video(model, video_path='./dataset/videos/sample_5.mp4', output_path='./dataset/videos/output_detected_for_sample_5.mp4', frame_width=1440, frame_height=1080)
     
 # Execute main function
 if __name__ == "__main__":
